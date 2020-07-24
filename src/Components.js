@@ -1,10 +1,45 @@
 import React from 'react';
-import Axios from 'axios';
+import axios from 'axios';
+import { render } from '@testing-library/react';
+
+class Main extends React.Component{
+    
+}
 
 
 
-class AddNewCard{}() =>{
 
+
+
+
+
+
+
+class AddNewCard extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    render(){
+
+    
+        return 
+    }
 };
 
 
@@ -68,3 +103,6 @@ function preivousCard(){
 
 
 };
+
+
+
