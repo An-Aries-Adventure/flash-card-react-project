@@ -3,7 +3,7 @@ import axios from 'axios';
 import { render } from '@testing-library/react';
 
 class Main extends React.Component{
-    
+
 }
 
 
@@ -51,12 +51,6 @@ function startUpApp(){
 };
 
 
-
-
-function chooseTab(){
-
-
-};
 
 
 

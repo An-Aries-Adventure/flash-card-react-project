@@ -1,12 +1,18 @@
 import React from 'react';
+import{Tab, Tabs} from 'react-bootstrap'
 
 
-function TabNavigation() {
+function tabNavigation() {
     return (
-      <div >
-        <h4>I am the navigation tabs</h4>
+    <container>
+      <div>
+          <Tabs>
+                <Tab>React</Tab>
+                <Tab>JQeary</Tab>
+          </Tabs>
       </div>
+    </container>
     );
   }
   
-  export default TabNavigation;
+  export default tabNavigation;
