@@ -34,7 +34,7 @@ class Main extends React.Component{
             return ( <div class = "container">
             <TabNavigation collectionData={this.state.collections}></TabNavigation>
             <div class = "appTitle">Flash Card App</div>
-            <h1>Number Of Collections: {this.state.collections.length}</h1>
+            <h1>Number Of Available Collections: {this.state.collections.length}</h1>
             {/* <ShowCard displayCard ={this.state.collections.card}></ShowCard> */}
         </div>);
         }else{
