@@ -30,24 +30,22 @@ class Main extends React.Component{
     }
 
     render(){
-        return(
-        <div class = 'card-grid'>
-            
-            <TabNavigation>cardData={this.state.collections}</TabNavigation>
+        if(this.state.collections.length > 0){
+            return ( <div class = "container">
+            <TabNavigation collectionData={this.state.collections}></TabNavigation>
+            <div class = "appTitle">Flash Card App</div>
             <h1>Number Of Collections: {this.state.collections.length}</h1>
-        </div>
-        <div>
-            <ShowCard>{this.state.currentQuestion}</ShowCard>
-        </div>
-        );
+            {/* <ShowCard displayCard ={this.state.collections.card}></ShowCard> */}
+        </div>);
+        }else{
+            return <h1>Loading data...</h1>;
+        }
     }
-         
 }
-      
 
 
 
 
 
 
-export default Main;
+export default Main
