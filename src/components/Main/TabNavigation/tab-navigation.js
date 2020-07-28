@@ -2,17 +2,21 @@ import React from 'react';
 import{Tab, Tabs} from 'react-bootstrap'
 
 
-function tabNavigation() {
+function TabNavigation(props) {
+
+    const tabItems = props.collectionData.map((collection) => {
+      return <Tab>{collection.title}</Tab>
+      });
+      
     return (
     <container>
       <div>
           <Tabs>
-                <Tab>React</Tab>
-                <Tab>JQeary</Tab>
+            {tabItems}
           </Tabs>
       </div>
     </container>
     );
   }
   
-  export default tabNavigation;
+  export default TabNavigation;
