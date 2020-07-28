@@ -4,7 +4,9 @@ import React from 'react';
 function cardDisplay() {
     return (
       <div >
-        <h4>iam the card display</h4>
+          <container>
+            <h4>i am the card display</h4>
+          </container>
       </div>
     );
   }
