@@ -7,10 +7,16 @@ import cardText from '../Main/CardDisplay/ShowCards/cardText';
 import { Container } from 'react-bootstrap';
 
 
+axios.post('https:sample-endpoint.com/user', {
+    Name: 'Fred',
+    Age: '23'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
 
 
-
-    function postNewCard(props){
+    function submitNewCard(props){
         axios.post('http://localhost:5000/api/collections')
         .then( getAllCollections())
     }
@@ -22,7 +28,7 @@ import { Container } from 'react-bootstrap';
         <container class = "newform">
             <form>
                 <div>
-                <li>{sideOneInput = prompt ("Please type the information you would like displayed on side 1.")}</li>
+                    <li>{sideOneInput = prompt ("Please type the information you would like displayed on side 1.")}</li>
                 </div>
                 <br />
                 <div>
@@ -31,9 +37,9 @@ import { Container } from 'react-bootstrap';
 
             </form>
             <button class = "submit">Submit
-                onclick {() => postNewCard()}
+                onclick {() => submitNewCard()}
             </button>
         </container>
     }
 
-   
+export default newCardForm

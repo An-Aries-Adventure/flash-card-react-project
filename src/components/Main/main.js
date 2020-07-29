@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
-import cardDisplay from './CardDisplay/cardDisplay.js';
-import GetData from './GetCardData/getData';
-import cardText from './CardDisplay/ShowCards/cardText';
+
+import CardText from './CardDisplay/ShowCards/CardText/cardText';
 
 
 
@@ -37,10 +36,13 @@ class Main extends React.Component{
     render(){
         if(this.state.collections.length > 0){
             return ( <div class = "container">
+            <br />
             <TabNavigation collectionData={this.state.collections}></TabNavigation>
-            <div class = "appTitle">Flash Card App</div>
+            <br />
+            <div class = "appTitle">
+            <h1>Flash Card App</h1></div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
-            <cardText text = "Hello"></cardText>
+            <CardText currentFlashCard = {this.state.collections[0].cards[0].word}></CardText>
         </div>);
         }else{
             return <h1>Loading data...</h1>;

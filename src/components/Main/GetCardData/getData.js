@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../App.css';
 import axios from 'axios';
-import {Tabs, Tab} from 'react-bootstrap' 
+
 
 
 
