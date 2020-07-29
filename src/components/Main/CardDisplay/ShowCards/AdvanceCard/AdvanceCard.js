@@ -8,14 +8,14 @@ class AdvanceCard extends Component{
         super(props);
         this.state = {
             cards: props.cardChoices,
-            currentCard: props.cardChoices[i],
-            nextCard: props.cardChoices[i] + 1 
+            currentCard: null,
+            nextCard: null
     }
    }
 
    render(){
         return ( <button class = 'arrowforward'>
-        onClick={() => this.props.onClick()}
+        onClick={() => this.props.nextCard}
         </button>);
    }
 }

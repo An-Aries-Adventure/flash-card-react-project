@@ -3,47 +3,41 @@ import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
 import cardDisplay from './CardDisplay/cardDisplay.js';
 import GetData from './GetCardData/getData';
-import ShowCard from '../Main/CardDisplay/ShowCards/ShowCard';
+import cardText from '../Main/CardDisplay/ShowCards/cardText';
+import { Container } from 'react-bootstrap';
 
 
 
 
-class NewCard extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            collections: this.state.collections
-            question: 
-            answer:
-        };
-    };
 
-    getAllCollections(){
-        axios.get('http://localhost:5000/api/collections')
-        .then((res) =>{
-            console.log(res);
-            const collections = res.data;
-            this.setState({collections: collections});
-        })
+    function postNewCard(props){
+        axios.post('http://localhost:5000/api/collections')
+        // .then((res) =>{
+        //     console.log(res);
+        //     const collections = res.data;
+        //     this.setState({collections: collections});
+    }
+    
+
+    // componentDidMount(){
+    //     this.postNewCard()
+    // }
+    function newCardForm(props){
+        <container class = "newform">
+            <form>
+                <div>
+                <li>{sideOneInput = prompt ("Please type the information you would like displayed on side 1.")}</li>
+                </div>
+                <br />
+                <div>
+                    <li>{sideTwoInput = prompt ("Please type the information you would like displayed on side 2.")}</li>
+                </div>
+
+            </form>
+            <button class = "submit">Submit
+                onclick {() => postNewCard()}
+            </button>
+        </container>
     }
 
-    componentDidMount(){
-        this.getAllCollections()
-    }
-
-    render(){
-        if(this.state.collections.length > 0){
-            return ( <div class = "container">
-            <TabNavigation collectionData={this.state.collections}></TabNavigation>
-            <div class = "appTitle">Flash Card App</div>
-            <h1>Number Of Collections: {this.state.collections.length}</h1>
-            {/* <ShowCard displayCard ={this.state.collections.card}></ShowCard> */}
-        </div>);
-        }else{
-            return <h1>Loading data...</h1>;
-        }
-    }
-}
-
-
-
+   

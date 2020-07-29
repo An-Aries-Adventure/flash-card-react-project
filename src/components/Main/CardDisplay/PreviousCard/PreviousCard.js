@@ -8,8 +8,8 @@ class PreviousCard extends Component{
         super(props);
         this.state = {
             cards: props.cardChoices,
-            currentCard: props.cardChoices[i],
-            previousCard: props.cardChoices[i] - 1
+            currentCard: null,
+            previousCard: null
     }
    }
 

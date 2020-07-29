@@ -3,7 +3,7 @@ import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
 import cardDisplay from './CardDisplay/cardDisplay.js';
 import GetData from './GetCardData/getData';
-import ShowCard from '../Main/CardDisplay/ShowCards/ShowCard';
+import cardText from './CardDisplay/ShowCards/cardText';
 
 
 
@@ -11,8 +11,10 @@ class Main extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            collections: []
-
+            collections: [],
+            currentTab: null,
+            side1: null, 
+            side2: null
         };
     };
 
@@ -35,7 +37,7 @@ class Main extends React.Component{
             <TabNavigation collectionData={this.state.collections}></TabNavigation>
             <div class = "appTitle">Flash Card App</div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
-            {/* <ShowCard displayCard ={this.state.collections.card}></ShowCard> */}
+            {/* <cardText cardText="Hello" ></cardText>    */}
         </div>);
         }else{
             return <h1>Loading data...</h1>;
