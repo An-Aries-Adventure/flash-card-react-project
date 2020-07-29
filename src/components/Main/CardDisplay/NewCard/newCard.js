@@ -12,12 +12,8 @@ import { Container } from 'react-bootstrap';
 
     function postNewCard(props){
         axios.post('http://localhost:5000/api/collections')
-        // .then((res) =>{
-        //     console.log(res);
-        //     const collections = res.data;
-        //     this.setState({collections: collections});
+        .then( getAllCollections())
     }
-    
 
     // componentDidMount(){
     //     this.postNewCard()

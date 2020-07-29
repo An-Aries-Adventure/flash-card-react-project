@@ -11,9 +11,11 @@ function TabNavigation(props) {
     return (
     <container>
       <div>
-          <Tabs>
-            {tabItems}
-          </Tabs>
+        <Tabs>
+          <Tab eventkey ="available tabs" title={this.collections[0].title[0]}>
+            <h5>{tabItems}</h5>
+          </Tab>
+        </Tabs>
       </div>
     </container>
     );

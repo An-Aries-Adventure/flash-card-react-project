@@ -3,21 +3,14 @@ import '../../../../src/App.css';
 import axios from 'axios';
 
 
-class PreviousCard extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            cards: props.cardChoices,
-            currentCard: null,
-            previousCard: null
-    }
-   }
-
-   render(){
-        return ( <button class = 'arrowback'>
-        onClick={() => this.props.previousCard}
+function PreviousCard(props){
+    
+    return ( <button class = 'arrowback'>
+        onClick={() => this.props.collection[i], i--}
         </button>);
-   }
 }
+
+        
+
 
 export default PreviousCard;

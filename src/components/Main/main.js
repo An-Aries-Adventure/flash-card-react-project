@@ -15,6 +15,7 @@ class Main extends React.Component{
             currentTab: null,
             side1: null, 
             side2: null
+
         };
     };
 
@@ -37,7 +38,7 @@ class Main extends React.Component{
             <TabNavigation collectionData={this.state.collections}></TabNavigation>
             <div class = "appTitle">Flash Card App</div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
-            {/* <cardText cardText="Hello" ></cardText>    */}
+            <cardText text = {"Hello"}></cardText>
         </div>);
         }else{
             return <h1>Loading data...</h1>;

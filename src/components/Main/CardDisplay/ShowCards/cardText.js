@@ -5,12 +5,13 @@ import axios from 'axios';
 
 
   
-function cardText(){
+function cardText(props){
         return ( 
         <div class = 'card-grid'>
         <h1>{this.props.cardText}</h1>
          </div>
         );
 }
+{/* <cardText cardText="Hello" ></cardText>    */}
 
-export default cardText();
+export default cardText;
