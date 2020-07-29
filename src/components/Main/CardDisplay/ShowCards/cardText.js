@@ -8,7 +8,7 @@ import axios from 'axios';
 function cardText(props){
         return ( 
         <div class = 'card-grid'>
-        <h1>{this.props.cardText}</h1>
+        <h1>{props.text}</h1>
          </div>
         );
 }

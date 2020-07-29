@@ -13,6 +13,8 @@ class Main extends React.Component{
         this.state = {
             collections: [],
             currentTab: null,
+            activeCards: [],
+            currentCardNumber: 1,
             side1: null, 
             side2: null
 
@@ -38,7 +40,7 @@ class Main extends React.Component{
             <TabNavigation collectionData={this.state.collections}></TabNavigation>
             <div class = "appTitle">Flash Card App</div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
-            <cardText text = {"Hello"}></cardText>
+            <cardText text = "Hello"></cardText>
         </div>);
         }else{
             return <h1>Loading data...</h1>;
