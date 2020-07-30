@@ -9,8 +9,8 @@ import SubmitNewCard from '../NewCard/submitNewCard';
         constructor(props) {
           super(props);
           this.state = {
-            word: null,
-            definition: null
+            word: '',
+            definition: ''
         }
 
       
@@ -38,7 +38,7 @@ import SubmitNewCard from '../NewCard/submitNewCard';
                Definition - 
                 <input type="text" definition ={this.state.value} onChange={this.handleChange} />
               </label>
-              <input type="submit" value="Submit" onclick={SubmitNewCard}/>
+              <input type="submit" value="Submit" onclick={SubmitNewCard()}/>
             </form>
           );
         }
