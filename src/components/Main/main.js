@@ -3,7 +3,6 @@ import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
 import NewCardForm from '../Main/CardDisplay/NewCard/newCard';
 import CardText from './CardDisplay/ShowCards/CardText/cardText';
-import SubmitNewCard from '../Main/CardDisplay/NewCard/submitNewCard';
 import CardDefinition from '../Main/CardDisplay/ShowCards/CardText/cardDefinition';
 
 
