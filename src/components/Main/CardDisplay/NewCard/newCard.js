@@ -1,6 +1,6 @@
 import React from 'react';
 import SubmitNewCard from '../NewCard/submitNewCard';
-
+import axios from 'axios';
 
 
 
@@ -11,37 +11,37 @@ import SubmitNewCard from '../NewCard/submitNewCard';
           this.state = {
             word: '',
             definition: ''
+            }  
         }
-
-      
-          this.handleChange = this.handleWordChange.bind(this);
-          this.handleSubmit = this.handleSubmit.bind(this);
-        }
-      
-        handleWordChange(event) {
-          this.setState({value: event.target.value});
-        }
-      
-        handleSubmit(event) {
-          alert('A new word was submitted to this Collection');
-          event.preventDefault();
-        }
-      
+        SubmitNewCard=(word, definition)=>{
+            axios.post('http://localhost:5000/api/collections',{
+            "word": document.getElementById("Word").value,
+            "definition":  document.getElementById("Definition").value
+            })
+         
+    }
         render() {
           return (
-            <form onSubmit={this.handleSubmit}>
+            <form >
               <label>
                 Word - 
-                <input type="text" word ={this.state.value} onChange={this.handleChange} />
+                <input id = "Word" type="text"/>
               </label>
               <label>
                Definition - 
-                <input type="text" definition ={this.state.value} onChange={this.handleChange} />
+                <input id="Definition" type="text"/>
               </label>
-              <input type="submit" value="Submit" onclick={SubmitNewCard()}/>
+              <input type="submit" value="Submit" onClick={SubmitNewCard()}/>
             </form>
           );
         }
-      }
+    }
 
 export default NewCardForm
+
+
+
+
+
+
+
