@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
-
+import NewCardForm from '../Main/CardDisplay/NewCard/newCard';
 import CardText from './CardDisplay/ShowCards/CardText/cardText';
 
 
@@ -43,6 +43,7 @@ class Main extends React.Component{
             <h1>Flash Card App</h1></div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
             <CardText currentFlashCard = {this.state.collections[0].cards[0].word}></CardText>
+            <NewCardForm></NewCardForm>
         </div>);
         }else{
             return <h1>Loading data...</h1>;

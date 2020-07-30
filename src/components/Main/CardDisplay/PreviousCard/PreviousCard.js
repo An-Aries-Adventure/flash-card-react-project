@@ -6,7 +6,7 @@ import axios from 'axios';
 function PreviousCard(props){
     
     return ( <button class = 'arrowback'>
-        onClick={() => this.props.collection[i], i--}
+        onClick={() => props.collection[i], i--}
         </button>);
 }
 

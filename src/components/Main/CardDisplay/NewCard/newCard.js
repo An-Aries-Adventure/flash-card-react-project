@@ -1,45 +1,47 @@
 import React from 'react';
-import axios from 'axios';
-import TabNavigation from './TabNavigation/tab-navigation';
-import cardDisplay from './CardDisplay/cardDisplay.js';
-import GetData from './GetCardData/getData';
-import cardText from '../Main/CardDisplay/ShowCards/cardText';
-import { Container } from 'react-bootstrap';
+import SubmitNewCard from '../NewCard/submitNewCard';
 
 
-axios.post('https:sample-endpoint.com/user', {
-    Name: 'Fred',
-    Age: '23'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
 
 
-    function submitNewCard(props){
-        axios.post('http://localhost:5000/api/collections')
-        .then( getAllCollections())
-    }
 
-    // componentDidMount(){
-    //     this.postNewCard()
-    // }
-    function newCardForm(props){
-        <container class = "newform">
-            <form>
-                <div>
-                    <li>{sideOneInput = prompt ("Please type the information you would like displayed on side 1.")}</li>
-                </div>
-                <br />
-                <div>
-                    <li>{sideTwoInput = prompt ("Please type the information you would like displayed on side 2.")}</li>
-                </div>
+    class NewCardForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            word: null,
+            definition: null
+        }
 
+      
+          this.handleChange = this.handleWordChange.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
+        }
+      
+        handleWordChange(event) {
+          this.setState({value: event.target.value});
+        }
+      
+        handleSubmit(event) {
+          alert('A new word was submitted to this Collection' + this.state.value);
+          event.preventDefault();
+        }
+      
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Word - 
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+              </label>
+              <label>
+               Definition - 
+                <input type="text" value={this.state.word} onChange={this.handleChange} />
+              </label>
+              <input type="submit" value="Submit" onclick={SubmitNewCard}/>
             </form>
-            <button class = "submit">Submit
-                onclick {() => submitNewCard()}
-            </button>
-        </container>
-    }
+          );
+        }
+      }
 
-export default newCardForm
+export default NewCardForm

@@ -12,3 +12,13 @@ function advanceCard(){
    }
 
 export default advanceCard;
+
+
+incrementCount() {
+    this.setState((state) => {
+      // Important: read `state` instead of `this.state` when updating.
+      return {count: state.count + 1}
+    });
+  }
+
+export default CardText;
