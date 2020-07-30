@@ -3,7 +3,8 @@ import axios from 'axios';
 import TabNavigation from './TabNavigation/tab-navigation';
 import NewCardForm from '../Main/CardDisplay/NewCard/newCard';
 import CardText from './CardDisplay/ShowCards/CardText/cardText';
-
+import SubmitNewCard from '../Main/CardDisplay/NewCard/submitNewCard';
+import CardDefinition from '../Main/CardDisplay/ShowCards/CardText/cardDefinition';
 
 
 class Main extends React.Component{
@@ -42,7 +43,13 @@ class Main extends React.Component{
             <div class = "appTitle">
             <h1>Flash Card App</h1></div>
             <h1>Number Of Available Collections: {this.state.collections.length}</h1>
-            <CardText currentFlashCard = {this.state.collections[0].cards[0].word}></CardText>
+            <div>
+            <h3>The word is:<CardText currentSideOne = {this.state.collections[0].cards[0].word}></CardText></h3>
+            </div>
+            <div>
+            <h3>The definition is:<CardDefinition currentSideTwo = {this.state.collections[0].cards[0].definition}></CardDefinition></h3>
+            </div> 
+            
             <NewCardForm></NewCardForm>
         </div>);
         }else{

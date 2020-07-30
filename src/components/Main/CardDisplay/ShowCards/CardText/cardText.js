@@ -7,7 +7,7 @@ import '../../../../../../src/App.css';
 function CardText(props){
         return ( 
         <div class = 'card-grid'>
-        {props.currentFlashCard}
+        {props.currentSideOne}
          </div>
         );
 }
