@@ -23,7 +23,7 @@ import SubmitNewCard from '../NewCard/submitNewCard';
         }
       
         handleSubmit(event) {
-          alert('A new word was submitted to this Collection' + this.state.value);
+          alert('A new word was submitted to this Collection');
           event.preventDefault();
         }
       
@@ -32,11 +32,11 @@ import SubmitNewCard from '../NewCard/submitNewCard';
             <form onSubmit={this.handleSubmit}>
               <label>
                 Word - 
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <input type="text" word ={this.state.value} onChange={this.handleChange} />
               </label>
               <label>
                Definition - 
-                <input type="text" value={this.state.word} onChange={this.handleChange} />
+                <input type="text" definition ={this.state.value} onChange={this.handleChange} />
               </label>
               <input type="submit" value="Submit" onclick={SubmitNewCard}/>
             </form>
