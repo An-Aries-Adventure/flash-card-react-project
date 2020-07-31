@@ -37,10 +37,26 @@ class Main extends React.Component{
     
 
     SubmitNewCard(){
+        let word = document.getElementById("word").value;
+        let definition =  document.getElementById("definition").value;
+
+        alert('word ' + word);
+        alert('definition', definition);
+
+        
         axios.post('http://localhost:5000/api/collections/'+ this.state.collections[this.state.currentCollectionIndex]._id +'/cards',{
-        "word": document.getElementById("word").value,
-        "definition":  document.getElementById("definition").value
-        })
+        "word": word,
+        "definition":  definition
+        }).then((res) => {
+            console.log('res', res);
+        }).catch((err) => {
+            console.log('err', err);
+        });
+
+        // axios.post('http://localhost:5000/api/collections/'+ this.state.collections[this.state.currentCollectionIndex]._id +'/cards',{
+        // "word": document.getElementById("word").value,
+        // "definition":  document.getElementById("definition").value
+        // })
         this.getAllCollections()    
         }
             
