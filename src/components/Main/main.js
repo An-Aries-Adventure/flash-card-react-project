@@ -33,6 +33,31 @@ class Main extends React.Component{
         this.getAllCollections()
     }
 
+
+    SubmitNewCard(word, definition){
+        axios.post('http://localhost:5000/api/collections/'+this.collections.id+'/cards',{
+        "word": document.getElementById("word").value,
+        "definition":  document.getElementById("definition").value
+        })    
+      }
+            
+      render() {
+        return (
+          <form >
+          <label>
+            Word - 
+            <input id ="word" type="text"/>
+          </label>
+          <label>
+            Definition - 
+            <input id = "definition" type="text"/>
+          </label>
+            <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
+          </form>
+            );
+        }
+    
+
     render(){
         if(this.state.collections.length > 0){
             return ( <div class = "container">

@@ -3,7 +3,6 @@ import axios from 'axios';
 
 
 
-
 class NewCardForm extends React.Component {
   constructor(props) {
   super(props);
@@ -12,9 +11,19 @@ class NewCardForm extends React.Component {
       definition: ''
     }  
   }
-        
-  SubmitNewCard=(word, definition)=>{
-    axios.post('http://localhost:5000/api/collections',{
+
+
+  CurrentID(){
+    const currentID = this.props.collectionData.map((collection) => {
+      return collection.id
+    });
+
+
+  }
+  
+
+  SubmitNewCard(word, definition){
+    axios.post('http://localhost:5000/api/collections/'+this.collection.id+'/cards',{
     "word": document.getElementById("word").value,
     "definition":  document.getElementById("definition").value
     })    
@@ -31,7 +40,7 @@ class NewCardForm extends React.Component {
         Definition - 
         <input id = "definition" type="text"/>
       </label>
-        <input type="submit" value="Submit" onClick={SubmitNewCard()}/>
+        <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
       </form>
         );
   }
