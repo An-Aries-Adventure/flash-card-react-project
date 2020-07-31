@@ -13,50 +13,37 @@ class Main extends React.Component{
             collections: [],
             currentTab: null,
             activeCards: [],
-            currentCardNumber: 1,
+            currentCollectionIndex: null,
             side1: null, 
             side2: null
 
         };
     };
 
-    getAllCollections(){
+   getAllCollections(){
         axios.get('http://localhost:5000/api/collections')
         .then((res) =>{
             console.log(res);
             const collections = res.data;
-            this.setState({collections: collections});
+            this.setState({collections: collections, currentCollectionIndex: 0});
         })
+
     }
 
     componentDidMount(){
         this.getAllCollections()
     }
 
+    
 
-    SubmitNewCard(word, definition){
-        axios.post('http://localhost:5000/api/collections/'+this.collections.id+'/cards',{
+    SubmitNewCard(){
+        axios.post('http://localhost:5000/api/collections/'+ this.state.collections[this.state.currentCollectionIndex]._id +'/cards',{
         "word": document.getElementById("word").value,
         "definition":  document.getElementById("definition").value
-        })    
-      }
-            
-      render() {
-        return (
-          <form >
-          <label>
-            Word - 
-            <input id ="word" type="text"/>
-          </label>
-          <label>
-            Definition - 
-            <input id = "definition" type="text"/>
-          </label>
-            <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
-          </form>
-            );
+        })
+        this.getAllCollections()    
         }
-    
+            
 
     render(){
         if(this.state.collections.length > 0){
@@ -74,7 +61,18 @@ class Main extends React.Component{
             <h3>The definition is:<CardDefinition currentSideTwo = {this.state.collections[0].cards[0].definition}></CardDefinition></h3>
             </div> 
             
-            <NewCardForm></NewCardForm>
+            <form >
+          <label>
+            Word - 
+            <input id ="word" type="text"/>
+          </label>
+          <label>
+            Definition - 
+            <input id = "definition" type="text"/>
+          </label>
+            <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
+          </form>
+            );
         </div>);
         }else{
             return <h1>Loading data...</h1>;
